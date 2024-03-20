@@ -1,13 +1,13 @@
 import { menuItems } from "../../data/db.ts";
 import MenuItems from "./MenuItems.tsx";
-import useOrder from "../../hooks/useOrder.ts";
 import H2 from "../H2.tsx";
+import useOrderContext from "../../hooks/useOrders.ts";
 
 function Menu() {
-  const { addItem } = useOrder();
+  const { addItem } = useOrderContext();
   return (
-    <section>
-      <H2 text={"Menu"} />
+    <section className={"p-5"}>
+      <H2 text={"Menú"} />
       {menuItems.map((item) => (
         <MenuItems key={item.id} item={item} addItem={addItem} />
       ))}
