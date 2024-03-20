@@ -1,0 +1,11 @@
+{
+  "jsxBracketSameLine": true,
+  "overrides": [
+    {
+      "files": "*.tsx",
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
+}

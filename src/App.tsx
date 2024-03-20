@@ -1,14 +1,8 @@
-
-
 function App() {
-
   return (
-      <>
-          <header className={"bg-teal-400 py-5"}></header>
-          <h1 className={"text-2xl text-indigo-600 font-medium"}>
-              Hola mundo
-          </h1>
-      </>
+    <header className={"bg-teal-400 py-5"}>
+      <h1 className={"text-4xl text-center font-medium"}>Hola mundo</h1>
+    </header>
   );
 }
 
