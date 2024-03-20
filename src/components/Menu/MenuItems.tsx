@@ -1,8 +1,8 @@
 import { MenuItem } from "../../types";
+import { formatPrice } from "../../helpers";
 
 type MenuItemsProps = {
   item: MenuItem;
-  // eslint-disable-next-line no-unused-vars
   addItem: (item: MenuItem) => void;
 };
 
@@ -19,7 +19,7 @@ function MenuItems({ item, addItem }: MenuItemsProps) {
         <p
           className={"text-lg mt-3 font-bold text-teal-700"}
           aria-labelledby={"Precio"}>
-          ${price}
+          {formatPrice(price)}
         </p>
       </div>
       <button

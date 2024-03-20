@@ -1,13 +1,15 @@
 import Header from "./components/Header.tsx";
 import Menu from "../components/Menu";
 import Orders from "../components/Orders";
-import { OrderProvider } from "../context/OrderProvider.tsx";
 
 function Layout() {
   return (
-    <OrderProvider>
+    <div className={"max-h-screen overflow-hidden"}>
       <Header />
-      <main className={"max-w-7xl mx-auto py-20 grid md:grid-cols-2"}>
+      <main
+        className={
+          "max-w-7xl mx-auto pt-10 pb-20 grid md:grid-cols-2 max-h-full"
+        }>
         <Menu />
         <Orders />
       </main>
@@ -16,7 +18,7 @@ function Layout() {
           Matías Bubello {new Date().getFullYear()}
         </p>
       </footer>
-    </OrderProvider>
+    </div>
   );
 }
 

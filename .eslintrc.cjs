@@ -31,7 +31,7 @@ module.exports = {
     "semi": ["error", "always"],
     "quotes": ["error", "double"],
     "no-lone-blocks": ["error"],
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/no-unstable-nested-components": "warn",
     "import/no-unresolved": "off",

@@ -3,8 +3,8 @@ import { MenuItem, OrderItem } from "../types";
 
 type OrderContextType = {
   orders: OrderItem[];
-  // eslint-disable-next-line no-unused-vars
   addItem: (item: MenuItem) => void;
+  removeOrder: (id: number) => void;
 };
 
 type Props = {
@@ -32,8 +32,13 @@ const OrderProvider: React.FC<Props> = ({ children }: Props) => {
     }
   };
 
+  const removeOrder = (id: number) => {
+    const updatedOrder = orders.filter((orderItem) => orderItem.id !== id);
+    setOrders(updatedOrder);
+  };
+
   return (
-    <OrderContext.Provider value={{ orders, addItem }}>
+    <OrderContext.Provider value={{ orders, addItem, removeOrder }}>
       {children}
     </OrderContext.Provider>
   );
