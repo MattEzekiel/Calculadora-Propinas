@@ -5,7 +5,7 @@ import OrderTotals from "./OrderTotals.tsx";
 import Tips from "./Tips.tsx";
 
 function Orders() {
-  const { orders, removeOrder } = useOrderContext();
+  const { orders, removeOrder, tip } = useOrderContext();
 
   return (
     <section
@@ -21,7 +21,7 @@ function Orders() {
         <p className={"text-center"}>No hay ordenes en este momento</p>
       )}
       <Tips />
-      <OrderTotals orders={orders} />
+      <OrderTotals orders={orders} tip={tip} />
     </section>
   );
 }

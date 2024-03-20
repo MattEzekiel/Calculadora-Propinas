@@ -5,14 +5,18 @@ import { formatPrice } from "../../helpers";
 
 type OrderItems = {
   orders: OrderItem[];
+  tip: number;
 };
-function OrderTotals({ orders }: OrderItems) {
-  console.log(orders);
+function OrderTotals({ orders, tip }: OrderItems) {
   const subTotalAmount = useMemo(() => {
     return orders.reduce((acc, order) => {
       return acc + order.price;
     }, 0);
   }, [orders]);
+
+  const tipsAmount = useMemo(() => {
+    return subTotalAmount * tip;
+  }, [subTotalAmount, tip]);
 
   return (
     <div className={"space-y-3 border-secondary border-t-2 pt-5"}>
@@ -25,7 +29,7 @@ function OrderTotals({ orders }: OrderItems) {
       </dl>
       <dl className={"flex gap-x-3 items-center"}>
         <dt className={"text-tertiary"}>Propina:</dt>
-        <dd className={"font-bold text-tertiary"}>$0</dd>
+        <dd className={"font-bold text-tertiary"}>{formatPrice(tipsAmount)}</dd>
       </dl>
       <dl className={"flex gap-x-3 items-center"}>
         <dt className={"text-tertiary"}>Total a pagar:</dt>

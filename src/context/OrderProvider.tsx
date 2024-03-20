@@ -1,10 +1,12 @@
-import React, { createContext, ReactNode } from "react";
+import React, { createContext, ReactNode, useState } from "react";
 import { MenuItem, OrderItem } from "../types";
 
 type OrderContextType = {
   orders: OrderItem[];
   addItem: (item: MenuItem) => void;
   removeOrder: (id: number) => void;
+  tip: number;
+  setTip: React.Dispatch<React.SetStateAction<number>>;
 };
 
 type Props = {
@@ -14,7 +16,8 @@ type Props = {
 const OrderContext = createContext<OrderContextType | null>(null);
 
 const OrderProvider: React.FC<Props> = ({ children }: Props) => {
-  const [orders, setOrders] = React.useState<OrderItem[]>([]);
+  const [orders, setOrders] = useState<OrderItem[]>([]);
+  const [tip, setTip] = useState<number>(0);
 
   const addItem = (item: MenuItem) => {
     const itemExists = orders.find((orderItem) => orderItem.id === item.id);
@@ -38,7 +41,8 @@ const OrderProvider: React.FC<Props> = ({ children }: Props) => {
   };
 
   return (
-    <OrderContext.Provider value={{ orders, addItem, removeOrder }}>
+    <OrderContext.Provider
+      value={{ orders, addItem, removeOrder, tip, setTip }}>
       {children}
     </OrderContext.Provider>
   );
