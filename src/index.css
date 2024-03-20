@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#menu {
+    direction: rtl;
+}
+
+#menu *  {
+    direction: ltr;
+}
+
+
+section {
+    scrollbar-color: theme('colors.primary') theme('colors.secondary');
+    scrollbar-width: thin;
+    scrollbar-arrow-color: theme('colors.tertiary');
+}

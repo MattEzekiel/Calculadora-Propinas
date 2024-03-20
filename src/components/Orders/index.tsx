@@ -8,7 +8,7 @@ function Orders() {
   return (
     <section
       className={
-        "border border-dashed border-teal-400 p-5 rounded space-y-5 max-h-screen overflow-y-auto"
+        "border border-dashed border-primary p-5 rounded space-y-5 max-h-full overflow-y-auto"
       }>
       <H2 text={"Orden"} />
       {orders.length ? (
