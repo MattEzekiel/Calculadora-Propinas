@@ -10,6 +10,12 @@
     direction: ltr;
 }
 
+h1 {
+    background: linear-gradient(#eee, #333);
+    color: transparent;
+    background-clip: text;
+}
+
 
 section {
     scrollbar-color: theme('colors.primary') theme('colors.secondary');
