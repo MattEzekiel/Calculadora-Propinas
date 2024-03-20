@@ -33,7 +33,9 @@ function OrderTotals({ orders, tip }: OrderItems) {
       </dl>
       <dl className={"flex gap-x-3 items-center"}>
         <dt className={"text-tertiary"}>Total a pagar:</dt>
-        <dd className={"font-bold text-tertiary"}>$0</dd>
+        <dd className={"font-bold text-tertiary"}>
+          {formatPrice(subTotalAmount + tipsAmount)}
+        </dd>
       </dl>
       {/*<button type={"button"}>Reset</button>*/}
     </div>
