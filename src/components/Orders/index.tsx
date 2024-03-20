@@ -5,7 +5,7 @@ import OrderTotals from "./OrderTotals.tsx";
 import Tips from "./Tips.tsx";
 
 function Orders() {
-  const { orders, removeOrder, tip } = useOrderContext();
+  const { orders, removeOrder, tip, placeOrder } = useOrderContext();
 
   return (
     <section
@@ -14,14 +14,20 @@ function Orders() {
       }>
       <H2 text={"Orden"} />
       {orders.length ? (
-        orders.map((order) => (
-          <OrderItems key={order.id} order={order} removeOrder={removeOrder} />
-        ))
+        <>
+          {orders.map((order) => (
+            <OrderItems
+              key={order.id}
+              order={order}
+              removeOrder={removeOrder}
+            />
+          ))}
+          <Tips />
+          <OrderTotals orders={orders} tip={tip} placeOrder={placeOrder} />
+        </>
       ) : (
         <p className={"text-center"}>No hay ordenes en este momento</p>
       )}
-      <Tips />
-      <OrderTotals orders={orders} tip={tip} />
     </section>
   );
 }

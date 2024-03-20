@@ -7,6 +7,7 @@ type OrderContextType = {
   removeOrder: (id: number) => void;
   tip: number;
   setTip: React.Dispatch<React.SetStateAction<number>>;
+  placeOrder: () => void;
 };
 
 type Props = {
@@ -40,9 +41,14 @@ const OrderProvider: React.FC<Props> = ({ children }: Props) => {
     setOrders(updatedOrder);
   };
 
+  const placeOrder = () => {
+    setOrders([]);
+    setTip(0);
+  };
+
   return (
     <OrderContext.Provider
-      value={{ orders, addItem, removeOrder, tip, setTip }}>
+      value={{ orders, addItem, removeOrder, tip, setTip, placeOrder }}>
       {children}
     </OrderContext.Provider>
   );

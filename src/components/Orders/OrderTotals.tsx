@@ -6,8 +6,9 @@ import { formatPrice } from "../../helpers";
 type OrderItems = {
   orders: OrderItem[];
   tip: number;
+  placeOrder: () => void;
 };
-function OrderTotals({ orders, tip }: OrderItems) {
+function OrderTotals({ orders, tip, placeOrder }: OrderItems) {
   const subTotalAmount = useMemo(() => {
     return orders.reduce((acc, order) => {
       return acc + order.price;
@@ -37,7 +38,15 @@ function OrderTotals({ orders, tip }: OrderItems) {
           {formatPrice(subTotalAmount + tipsAmount)}
         </dd>
       </dl>
-      {/*<button type={"button"}>Reset</button>*/}
+      <button
+        type={"button"}
+        className={
+          "bg-primary hover:bg-tertiary text-white uppercase border border-primary px-4 py-2 hover:border-tertiary rounded disabled:bg-primary/50 disabled:text-tertiary/40 disabled:border-tertiary/40 disabled:cursor-not-allowed block w-full mt-5 transition-colors duration-300"
+        }
+        disabled={orders.length === 0}
+        onClick={placeOrder}>
+        Guardar orden
+      </button>
     </div>
   );
 }
