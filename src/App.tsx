@@ -1,9 +1,7 @@
+import Layout from "./layouts/Layout.tsx";
+
 function App() {
-  return (
-    <header className={"bg-teal-400 py-5"}>
-      <h1 className={"text-4xl text-center font-medium"}>Hola mundo</h1>
-    </header>
-  );
+  return <Layout />;
 }
 
 export default App;

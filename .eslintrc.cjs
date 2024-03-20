@@ -28,8 +28,8 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
-    semi: ["error", "always"],
-    quotes: ["error", "double"],
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
     "no-lone-blocks": ["error"],
     "no-unused-vars": "warn",
     "react/jsx-no-useless-fragment": "warn",
@@ -38,6 +38,7 @@ module.exports = {
     "global-require": "off",
     "max-len": ["warn", { "code":  400 }],
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
   settings: {
     react: {
