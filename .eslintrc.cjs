@@ -24,10 +24,7 @@ module.exports = {
         ]
       }
     ],
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
+    "react-refresh/only-export-components": "off",
     "semi": ["error", "always"],
     "quotes": ["error", "double"],
     "no-lone-blocks": ["error"],

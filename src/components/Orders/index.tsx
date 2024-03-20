@@ -2,6 +2,7 @@ import H2 from "../H2.tsx";
 import OrderItems from "./OrderItems.tsx";
 import useOrderContext from "../../hooks/useOrders.ts";
 import OrderTotals from "./OrderTotals.tsx";
+import Tips from "./Tips.tsx";
 
 function Orders() {
   const { orders, removeOrder } = useOrderContext();
@@ -19,6 +20,7 @@ function Orders() {
       ) : (
         <p className={"text-center"}>No hay ordenes en este momento</p>
       )}
+      <Tips />
       <OrderTotals orders={orders} />
     </section>
   );

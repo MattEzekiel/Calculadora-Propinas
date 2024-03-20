@@ -1,4 +1,4 @@
-import { MenuItem } from "../types";
+import { MenuItem, Tips } from "../types";
 
 export const menuItems: MenuItem[] = [
   {
@@ -60,5 +60,23 @@ export const menuItems: MenuItem[] = [
     id: 12,
     name: "Café Capuchino",
     price: 40,
+  },
+];
+
+export const tipOptions: Tips[] = [
+  {
+    id: "tip-10",
+    value: 0.1,
+    label: "10%",
+  },
+  {
+    id: "tip-20",
+    value: 0.2,
+    label: "20%",
+  },
+  {
+    id: "tip-50",
+    value: 0.5,
+    label: "50%",
   },
 ];
