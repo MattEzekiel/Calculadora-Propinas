@@ -1,6 +1,7 @@
 import Header from "./components/Header.tsx";
 import Menu from "../components/Menu";
 import Orders from "../components/Orders";
+import Footer from "./components/Footer.tsx";
 
 function Layout() {
   return (
@@ -13,11 +14,7 @@ function Layout() {
         <Menu />
         <Orders />
       </main>
-      <footer className={"bg-gray-900 p-4 min-h-[60px]"}>
-        <p className={"text-center text-white"}>
-          Matías Bubello {new Date().getFullYear()}
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }
