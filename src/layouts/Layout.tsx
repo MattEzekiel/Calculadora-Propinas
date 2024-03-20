@@ -2,6 +2,7 @@ import Header from "./components/Header.tsx";
 import Menu from "../components/Menu";
 import Orders from "../components/Orders";
 import Footer from "./components/Footer.tsx";
+import "@fontsource-variable/inter";
 
 function Layout() {
   return (
